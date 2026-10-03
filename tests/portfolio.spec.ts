@@ -1,6 +1,7 @@
 // Tests for the portfolio page. Each name starts with its test-case ID (PF-xx).
 import { test, expect } from './fixtures';
 import type { Page } from '@playwright/test';
+import { pdfText } from './pdf-text';
 
 const EMAIL = 'dionanthonyflores@gmail.com';
 const SECTIONS = ['project', 'how', 'skills', 'experience', 'contact'];
@@ -55,14 +56,24 @@ test('PF-04 the CV file is a real PDF, and every CV link points to it', async ({
   for (const link of await cvLinks.all()) await expect(link).toHaveAttribute('href', 'Dion-Flores-CV.pdf');
 });
 
+// The privacy checks only report yes/no. A failing "not.toMatch" would print the text it searched,
+// and on a public repository that would put the phone number in a public test log.
 test('PF-05 privacy: no phone number on the page or in the public CV', async ({ page }) => {
-  expect(await page.locator('body').innerText()).not.toMatch(PHONE);
-  expect(await (await page.request.get('./')).text()).not.toMatch(PHONE);
+  const hasPhone = (text: string) => PHONE.test(text);
+  expect(hasPhone(await page.locator('body').innerText()), 'phone number on the page').toBe(false);
+  expect(hasPhone(await (await page.request.get('./')).text()), 'phone number in the page source').toBe(false);
   // cv.html is the source of the public PDF; the phone is only ever added to the private copy
   const cvSource = await (await page.request.get('cv.html')).text();
-  expect(cvSource).not.toMatch(PHONE);
+  expect(hasPhone(cvSource), 'phone number in cv.html').toBe(false);
   expect(cvSource).toContain('<li id="phone" hidden></li>');
   expect(cvSource).toContain('Available upon request');
+
+  // The PDF itself, as people download it
+  const cvText = await pdfText(await (await page.request.get('Dion-Flores-CV.pdf')).body());
+  expect(cvText.includes(EMAIL) && cvText.includes('Calamba'), 'control: the PDF text was really read').toBe(true);
+  // A PDF can store "+63 939 ..." as separate pieces, so compare the digits with all spacing removed
+  const digits = cvText.replace(/[\s\-–.()]/g, '');
+  expect(/(\+?63|0)9\d{9}/.test(digits), 'phone number in the public CV PDF').toBe(false);
 });
 
 test('PF-06 the email button opens an email to me', async ({ page }) => {
