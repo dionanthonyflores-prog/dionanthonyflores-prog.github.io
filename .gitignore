@@ -1,0 +1,18 @@
+# Files git should ignore, so they are never uploaded to GitHub.
+
+# Private: the phone number and the CV copy that includes it
+private/
+
+# Installed tools and test output (re-created on every run)
+node_modules/
+test-results/
+playwright-report/
+blob-report/
+
+# Files Windows and Mac create on their own
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Settings for the Claude app on this laptop
+.claude/

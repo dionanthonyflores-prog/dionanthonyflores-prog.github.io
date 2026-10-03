@@ -1,0 +1,16 @@
+{
+  "name": "dion-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio of Dion Anthony L. Flores, Software QA Tester, plus its CV and automated tests",
+  "scripts": {
+    "serve": "node scripts/serve.js",
+    "cv": "node scripts/build-cv.js",
+    "test": "playwright test",
+    "test:report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.4"
+  }
+}

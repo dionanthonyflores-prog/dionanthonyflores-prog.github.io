@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dion Anthony Flores · Software QA Tester</title>
+<meta name="description" content="Software QA tester with almost 4 years in UAT, functional, regression and end-to-end testing. Test plans, test cases, defect reports, and Playwright automation in GitHub Actions. Based in Calamba, Laguna; open to remote work.">
+<meta name="theme-color" content="#0f7378">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dion Anthony Flores · Software QA Tester">
+<meta property="og:description" content="UAT, functional and end-to-end testing, test cases and defect reports, plus Playwright automation in GitHub Actions. See my QA case study.">
+<meta property="og:url" content="https://dionanthonyflores-prog.github.io/">
+<meta property="og:image" content="https://dionanthonyflores-prog.github.io/images/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f7378'/%3E%3Cpath d='M18 33l9 9 19-20' stroke='%23fff' stroke-width='7' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ===== Colours and sizes in one place (same teal as the CV) ===== */
+  :root {
+    --teal: #0f7378; --teal-dark: #0a5559; --mint: #e3f1f1; --ink: #1b2326; --muted: #55636a;
+    --paper: #f5f8f8; --card: #ffffff; --line: #d8e4e5; --pass: #1e7a46; --radius: 14px;
+    --mono: "IBM Plex Mono", ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body { margin: 0; font: 17px/1.6 "IBM Plex Sans", system-ui, sans-serif; color: var(--ink); background: var(--paper); }
+  img { max-width: 100%; height: auto; display: block; }   /* height: auto keeps photos in shape (width/height in the HTML only reserve the space) */
+  a { color: var(--teal); }
+  a:focus-visible, button:focus-visible { outline: 3px solid #f2b84b; outline-offset: 3px; border-radius: 6px; }
+  .wrap { width: min(1080px, 100% - 40px); margin-inline: auto; }
+  .mono { font-family: var(--mono); }
+  .skip { position: absolute; left: -999px; top: 8px; background: var(--ink); color: #fff; padding: 8px 14px; border-radius: 8px; z-index: 10; }
+  .skip:focus { left: 12px; }
+
+  /* ===== Header ===== */
+  header { position: sticky; top: 0; z-index: 5; background: rgba(245, 248, 248, .92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 64px; }
+  .brand { font-weight: 700; color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+  .brand .tick { width: 30px; height: 30px; border-radius: 8px; background: var(--teal); display: grid; place-items: center; }
+  .nav ul { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; }
+  .nav ul a { color: var(--muted); text-decoration: none; font-weight: 500; font-size: .95rem; }
+  .nav ul a:hover { color: var(--teal); }
+
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 20px; border-radius: 999px; font-weight: 600; font-size: .95rem;
+         text-decoration: none; background: var(--teal); color: #fff; border: 2px solid var(--teal); transition: background .2s, transform .2s; }
+  .btn:hover { background: var(--teal-dark); border-color: var(--teal-dark); transform: translateY(-1px); }
+  .btn.ghost { background: transparent; color: var(--teal); }
+  .btn.ghost:hover { background: var(--mint); }
+  .btn svg { width: 18px; height: 18px; flex: none; }
+
+  /* ===== Hero ===== */
+  .hero { padding: 72px 0 56px; }
+  .hero .wrap.top { display: grid; grid-template-columns: 1.25fr 1fr; gap: 48px; align-items: center; }
+  .eyebrow { font: 500 .8rem var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--teal); margin: 0 0 14px; }
+  h1 { font-size: clamp(2.3rem, 5vw, 3.4rem); line-height: 1.08; margin: 0 0 18px; letter-spacing: -.01em; }
+  .lead { font-size: 1.12rem; color: var(--muted); margin: 0 0 26px; max-width: 34em; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+  /* A real result from the mirou matcha test suite, styled like a terminal */
+  .run { background: #0f1c1e; color: #d6e4e4; border-radius: var(--radius); padding: 20px 22px; font: .86rem/1.7 var(--mono); box-shadow: 0 20px 50px rgba(15, 60, 64, .18); }
+  .run .bar { display: flex; gap: 6px; margin-bottom: 12px; }
+  .run .bar span { width: 10px; height: 10px; border-radius: 50%; background: #35494c; }
+  .run .cmd { color: #8fb5b7; }
+  .run .ok { color: #6fdc9d; }
+  .run .dim { color: #7c9395; }
+  .run a { color: #9fe0e3; }
+
+  /* ===== Numbers ===== */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 8px; }
+  .stat { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; }
+  .stat b { display: block; font-size: 1.9rem; line-height: 1.1; color: var(--teal); }
+  .stat span { color: var(--muted); font-size: .92rem; }
+
+  /* ===== Sections ===== */
+  section { padding: 64px 0; }
+  .section-head { margin-bottom: 28px; }
+  h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); margin: 0 0 8px; line-height: 1.2; }
+  .section-head p { color: var(--muted); margin: 0; max-width: 40em; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); }
+
+  /* Featured project */
+  .project { display: grid; grid-template-columns: 1fr 1fr; gap: 0; overflow: hidden; }
+  .project .shots { background: var(--mint); padding: 22px; display: grid; gap: 14px; align-content: start; }
+  .project .shots figure { margin: 0; }
+  .project .shots img { aspect-ratio: 16 / 10; object-fit: cover; object-position: top; width: 100%; border-radius: 10px; border: 1px solid var(--line); box-shadow: 0 8px 24px rgba(0, 0, 0, .08); }
+  .project .shots figcaption { font-size: .82rem; color: var(--muted); margin-top: 6px; }
+  .project .body { padding: 28px 30px; }
+  .project h3 { margin: 0 0 6px; font-size: 1.4rem; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin: 0 0 16px; }
+  .tags li { font: 500 .78rem var(--mono); background: var(--mint); color: var(--teal-dark); padding: 3px 10px; border-radius: 999px; }
+  .checks { list-style: none; padding: 0; margin: 0 0 20px; }
+  .checks li { padding-left: 28px; position: relative; margin-bottom: 8px; }
+  .checks li::before { content: ""; position: absolute; left: 0; top: .35em; width: 17px; height: 17px; border-radius: 50%; background: var(--pass)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' stroke='%23fff' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") center/13px no-repeat; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .links .btn { padding: 8px 16px; font-size: .9rem; }
+
+  .bugs { margin-top: 20px; border-top: 1px solid var(--line); padding-top: 16px; }
+  .bugs h4 { margin: 0 0 8px; font-size: 1rem; }
+  .bugs ol { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; font-size: .93rem; }
+  .bugs li { display: grid; grid-template-columns: 76px 60px 1fr; gap: 8px; align-items: baseline; }
+  .sev { font: 500 .74rem var(--mono); padding: 1px 7px; border-radius: 6px; text-align: center; background: #eef2f2; color: var(--muted); }
+  .sev.major { background: #fde8e4; color: #a33a24; }
+  .bug-id { font: 500 .8rem var(--mono); color: var(--teal-dark); }
+
+  /* How I test */
+  .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; counter-reset: step; list-style: none; padding: 0; margin: 0; }
+  .steps li { padding: 20px; counter-increment: step; }
+  .steps li::before { content: "0" counter(step); font: 500 .8rem var(--mono); color: var(--teal); display: block; margin-bottom: 6px; }
+  .steps h3 { margin: 0 0 6px; font-size: 1.05rem; }
+  .steps p { margin: 0; color: var(--muted); font-size: .92rem; }
+
+  /* Skills */
+  .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .skills .card { padding: 20px 22px; }
+  .skills h3 { margin: 0 0 10px; font-size: 1rem; }
+  .skills ul { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0; padding: 0; }
+  .skills li { background: var(--paper); border: 1px solid var(--line); border-radius: 999px; padding: 3px 11px; font-size: .88rem; }
+
+  /* Experience */
+  .jobs { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+  .job { padding: 18px 22px; display: grid; grid-template-columns: 170px 1fr; gap: 6px 22px; }
+  .job .when { font: 500 .82rem var(--mono); color: var(--teal); padding-top: 3px; }
+  .job h3 { margin: 0; font-size: 1.05rem; }
+  .job h3 span { font-weight: 400; color: var(--muted); }
+  .job p { grid-column: 2; margin: 0; color: var(--muted); font-size: .94rem; }
+  .edu { margin-top: 26px; }
+
+  /* Contact */
+  .contact { text-align: center; padding: 48px 28px; }
+  .contact h2 { margin-bottom: 10px; }
+  .contact p { color: var(--muted); margin: 0 auto 24px; max-width: 34em; }
+  .contact .actions { justify-content: center; }
+  .contact .small { font-size: .9rem; margin: 22px auto 0; }
+
+  footer { padding: 30px 0 46px; color: var(--muted); font-size: .9rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
+
+  /* ===== Tablets and phones ===== */
+  @media (max-width: 900px) {
+    .hero .wrap.top, .project { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .skills { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    .nav ul { display: none; }
+    .hero { padding: 44px 0 36px; }
+    .steps, .skills { grid-template-columns: 1fr; }
+    .job { grid-template-columns: 1fr; }
+    .job p { grid-column: 1; }
+    .project .body { padding: 22px 20px; }
+    .bugs li { grid-template-columns: 70px 56px 1fr; }
+    section { padding: 48px 0; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Dion Flores, back to top">
+      <span class="tick" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      Dion Flores
+    </a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#how">How I test</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn" href="Dion-Flores-CV.pdf" download>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      CV
+    </a>
+  </div>
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <div class="hero" id="top">
+    <div class="wrap top">
+      <div>
+        <p class="eyebrow">Software QA Tester · Calamba, Laguna · Open to remote work</p>
+        <h1>Hi, I'm Dion. I find the bugs before your customers do.</h1>
+        <p class="lead">
+          Almost 4 years of user acceptance, functional, regression and end-to-end testing for insurance, retail,
+          e-commerce and business systems. I write clear test cases, report bugs with evidence, and automate the
+          checks that should run every time.
+        </p>
+        <div class="actions">
+          <a class="btn" href="#project">See my QA case study</a>
+          <a class="btn ghost" href="Dion-Flores-CV.pdf" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download CV (PDF)
+          </a>
+        </div>
+      </div>
+      <figure class="run" aria-label="Result of my latest automated test run">
+        <div class="bar" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="cmd">$ npx playwright test</div>
+        <div class="dim">Running 243 tests</div>
+        <div class="dim">desktop-chrome · android-phone · iphone</div>
+        <br>
+        <div class="ok">✓ 228 passed</div>
+        <div class="dim">- 15 skipped (phone-only / desktop-only)</div>
+        <div class="dim">✗ 0 failed · 0 flaky</div>
+        <br>
+        <div class="dim">mirou matcha · GitHub Actions · 3 Oct 2026</div>
+        <div><a href="https://dionanthonyflores-prog.github.io/mirou-matcha/report/">Open the full report →</a></div>
+      </figure>
+    </div>
+    <div class="wrap">
+      <ul class="stats" aria-label="At a glance" style="list-style:none;padding:0;margin:40px auto 0">
+        <li class="stat"><b>~4 yrs</b><span>in software QA</span></li>
+        <li class="stat"><b>54</b><span>automated test cases, on 3 devices</span></li>
+        <li class="stat"><b>5</b><span>real bugs found, fixed and documented</span></li>
+        <li class="stat"><b>16</b><span>requirements traced to their tests</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FEATURED PROJECT -->
+  <section id="project">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Featured project</p>
+        <h2>mirou matcha: a real ordering site, built and tested end to end</h2>
+        <p>A website for a home-based matcha business in Bay, Laguna, where customers build an order and send it on Messenger. I built it, then tested it the way I would at work.</p>
+      </div>
+      <article class="card project">
+        <div class="shots">
+          <figure>
+            <img src="images/mirou-matcha-site.jpg" alt="The mirou matcha website home page" width="1280" height="800" loading="lazy">
+            <figcaption>The live site</figcaption>
+          </figure>
+          <figure>
+            <img src="images/mirou-matcha-test-report.jpg" alt="Playwright test report showing 228 passed, 0 failed, 0 flaky" width="1280" height="800" loading="lazy">
+            <figcaption>The published test report: every test has a video and a final screenshot</figcaption>
+          </figure>
+        </div>
+        <div class="body">
+          <h3>Test plan · test cases · automation · defect log</h3>
+          <ul class="tags">
+            <li>Playwright</li><li>TypeScript</li><li>GitHub Actions</li><li>Test design</li><li>Traceability</li>
+          </ul>
+          <ul class="checks">
+            <li>A test plan with scope, risks, entry and exit criteria, and severity definitions.</li>
+            <li>54 test cases traced to 16 requirements, plus 8 manual checks for real phones.</li>
+            <li>Every test runs on desktop Chrome, an Android phone and an iPhone, including a fake clock for the opening hours.</li>
+            <li>A quality gate: tests run on every update, and the site only goes live if all of them pass.</li>
+            <li>Regression tests for the bugs were proven to fail on the old, buggy code.</li>
+          </ul>
+          <div class="links">
+            <a class="btn" href="https://github.com/dionanthonyflores-prog/mirou-matcha/blob/main/qa/README.md">Read the case study</a>
+            <a class="btn ghost" href="https://dionanthonyflores-prog.github.io/mirou-matcha/">Live site</a>
+            <a class="btn ghost" href="https://dionanthonyflores-prog.github.io/mirou-matcha/report/">Test report</a>
+            <a class="btn ghost" href="https://github.com/dionanthonyflores-prog/mirou-matcha">Code</a>
+          </div>
+          <div class="bugs">
+            <h4>Bugs I found and got fixed</h4>
+            <ol>
+              <li><span class="bug-id">BUG-002</span><span class="sev major">Major</span><span>The same drink could go past the 20-cup limit, then silently drop after a reload (₱6,400 became ₱3,200).</span></li>
+              <li><span class="bug-id">BUG-003</span><span class="sev">Minor</span><span>On phones, the "Reviews" menu link landed 437px short because a photo loaded late.</span></li>
+              <li><span class="bug-id">BUG-004</span><span class="sev">Minor</span><span>A quick second tap on the menu tabs was ignored.</span></li>
+            </ol>
+            <p style="margin:10px 0 0;font-size:.9rem"><a href="https://github.com/dionanthonyflores-prog/mirou-matcha/blob/main/qa/defect-log.md">All 5 bug reports, with before/after screenshots →</a></p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- HOW I TEST -->
+  <section id="how" style="padding-top:8px">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">How I work</p>
+        <h2>How I test</h2>
+        <p>The same steps whether it's an insurance system or a small business website.</p>
+      </div>
+      <ol class="steps">
+        <li class="card"><h3>Understand</h3><p>Read the requirements and ask what matters most to the business and its users.</p></li>
+        <li class="card"><h3>Plan</h3><p>Decide what to test, what not to, on which devices, and what "done" means.</p></li>
+        <li class="card"><h3>Design</h3><p>Write test cases from boundaries, edge cases and real user journeys, each traced to a requirement.</p></li>
+        <li class="card"><h3>Test</h3><p>Run them by hand where judgment matters, and automate the ones that should run every time.</p></li>
+        <li class="card"><h3>Report and retest</h3><p>Log bugs with steps and evidence, then confirm the fix and keep a regression test.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" style="padding-top:8px">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Toolbox</p>
+        <h2>Skills</h2>
+      </div>
+      <div class="skills">
+        <div class="card"><h3>Testing</h3><ul><li>UAT</li><li>Functional</li><li>Regression</li><li>End-to-end</li><li>Cross-browser</li><li>Responsive</li><li>Compatibility</li><li>Role-based access</li></ul></div>
+        <div class="card"><h3>QA documents</h3><ul><li>Test plans</li><li>Test cases</li><li>Requirements traceability</li><li>Defect reports</li><li>Evidence</li></ul></div>
+        <div class="card"><h3>Automation</h3><ul><li>Playwright</li><li>TypeScript</li><li>GitHub Actions</li><li>Git and GitHub</li></ul></div>
+        <div class="card"><h3>Tools</h3><ul><li>Jira</li><li>Postman</li><li>Zoho BugTracker</li><li>LambdaTest</li><li>Microsoft 365</li><li>CICS</li></ul></div>
+        <div class="card"><h3>Data</h3><ul><li>SQL</li></ul></div>
+        <div class="card"><h3>Ways of working</h3><ul><li>Agile</li><li>Scrum</li><li>Working with developers</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" style="padding-top:8px">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Career</p>
+        <h2>Experience</h2>
+      </div>
+      <ol class="jobs">
+        <li class="card job"><span class="when">Jun 2026 – Oct 2026</span><h3>QA Officer <span>· PJ Lhuillier, Inc.</span></h3>
+          <p>User acceptance testing of an inventory forecasting and ordering system: test cases traced to requirements, the defect log, Playwright end-to-end tests, role-based access testing and SQL data checks.</p></li>
+        <li class="card job"><span class="when">Jan 2025 – Feb 2026</span><h3>Junior User Acceptance Tester <span>· Nityo Infotech (client: BPI-Philam Life)</span></h3>
+          <p>End-to-end and functional testing; creating and executing test cases; documenting defects and working with developers on fixes.</p></li>
+        <li class="card job"><span class="when">Aug 2023 – Dec 2024</span><h3>Software Quality Assurance <span>· OptimizeX/Primeview</span></h3>
+          <p>End-to-end, functional, compatibility, responsive and cross-browser testing of WordPress and Shopify websites, with LambdaTest and Zoho BugTracker.</p></li>
+        <li class="card job"><span class="when">Apr 2022 – Nov 2022</span><h3>Software QA Analyst, Manual (Level 2) <span>· Seven Seven Global Services</span></h3>
+          <p>Test cases from user stories; functional and regression testing in UAT and production in an Agile team, with Jira and Postman.</p></li>
+        <li class="card job"><span class="when">Oct 2021 – Dec 2021</span><h3>Quality Assurance Tester <span>· Q2 HR Solutions</span></h3>
+          <p>Documenting and executing test cases, and reporting bugs.</p></li>
+        <li class="card job"><span class="when">May 2021 – Aug 2021</span><h3>Technical Support <span>· STMicroelectronics</span></h3>
+          <p>Desktop and helpdesk support, ticket management and server maintenance.</p></li>
+      </ol>
+      <div class="edu card job"><span class="when">2014 – 2018</span><h3>BS Computer Science <span>· Colegio de San Juan de Letran Calamba</span></h3></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="padding-top:8px">
+    <div class="wrap">
+      <div class="card contact">
+        <p class="eyebrow">Contact</p>
+        <h2>Let's work together</h2>
+        <p>I'm looking for a remote QA role: manual, UAT or automation. Email me with the role and I'll send what you need.</p>
+        <div class="actions">
+          <a class="btn" href="mailto:dionanthonyflores@gmail.com">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" stroke="currentColor" stroke-width="2" fill="none"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+            dionanthonyflores@gmail.com
+          </a>
+          <a class="btn ghost" href="https://github.com/dionanthonyflores-prog">GitHub</a>
+          <a class="btn ghost" href="Dion-Flores-CV.pdf" download>Download CV (PDF)</a>
+        </div>
+        <p class="small">References available upon request.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Dion Anthony L. Flores</span>
+    <span>This page is tested automatically on every update. <a href="report/">See its test report</a>.</span>
+  </div>
+</footer>
+</body>
+</html>

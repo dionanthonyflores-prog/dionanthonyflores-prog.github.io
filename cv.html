@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dion Anthony L. Flores · CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<!--
+  This page is the source of the CV PDF. Run `npm run cv` to rebuild the PDF after editing.
+  The phone number is NOT in this file: the build script adds it only to the private copy.
+-->
+<style>
+  :root { --teal: #0f7378; --ink: #1d2427; --muted: #56636a; --line: #c9dadb; }
+  @page { size: A4; margin: 14mm 15mm 14mm; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 9.6pt/1.42 "IBM Plex Sans", Arial, sans-serif; color: var(--ink); background: #fff; }
+  .page { max-width: 180mm; margin: 0 auto; }
+  @media screen { body { background: #eef3f3; } .page { background: #fff; padding: 14mm 15mm; margin: 24px auto; box-shadow: 0 6px 30px rgba(0,0,0,.08); } }
+
+  header { border-bottom: 2px solid var(--teal); padding-bottom: 8px; margin-bottom: 10px; }
+  h1 { margin: 0; font-size: 21pt; letter-spacing: .02em; color: var(--teal); font-weight: 700; }
+  .role { margin: 1px 0 6px; font-size: 11pt; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); }
+  .contact { display: flex; flex-wrap: wrap; gap: 2px 14px; margin: 0; padding: 0; list-style: none; color: var(--muted); }
+  .contact a { color: inherit; text-decoration: none; }
+  .contact li[hidden] { display: none; }
+
+  h2 { margin: 12px 0 5px; font-size: 10pt; letter-spacing: .14em; text-transform: uppercase; color: var(--teal);
+       display: flex; align-items: center; gap: 10px; }
+  h2::after { content: ""; flex: 1; border-top: 1px solid var(--line); }
+  h2 { break-after: avoid; }
+  section { break-inside: avoid; }
+  .job a { white-space: nowrap; }
+  p { margin: 0; }
+  .summary { color: var(--ink); }
+
+  .job { margin-bottom: 7px; break-inside: avoid; }
+  .job-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+  .job-title { font-weight: 600; }
+  .job-title span { font-weight: 400; }
+  .dates { font: 500 8.4pt "IBM Plex Mono", monospace; color: var(--teal); white-space: nowrap; }
+  ul { margin: 2px 0 0; padding-left: 15px; }
+  li { margin: 0 0 1px; }
+  li::marker { color: var(--teal); }
+  .tools { margin-top: 2px; color: var(--muted); font-size: 8.8pt; }
+  .tools b { font-weight: 600; color: var(--ink); }
+
+  .skills { display: grid; grid-template-columns: 34mm 1fr; gap: 2px 10px; }
+  .skills dt { font-weight: 600; }
+  .skills dd { margin: 0; }
+  a { color: var(--teal); }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <h1>DION ANTHONY L. FLORES</h1>
+  <p class="role">Software QA Tester</p>
+  <ul class="contact">
+    <li><a href="mailto:dionanthonyflores@gmail.com">dionanthonyflores@gmail.com</a></li>
+    <li id="phone" hidden></li>
+    <li>Calamba, Laguna, Philippines</li>
+    <li><a href="https://dionanthonyflores-prog.github.io/">dionanthonyflores-prog.github.io</a></li>
+    <li><a href="https://github.com/dionanthonyflores-prog">github.com/dionanthonyflores-prog</a></li>
+  </ul>
+</header>
+
+<h2>Summary</h2>
+<p class="summary">
+  Software QA tester with almost 4 years of experience in user acceptance, functional, regression and end-to-end
+  testing for insurance, retail, e-commerce and business systems. I write clear test cases traced to requirements,
+  report defects with evidence, and automate key checks with Playwright and TypeScript in GitHub Actions.
+</p>
+
+<h2>Work Experience</h2>
+
+<div class="job">
+  <div class="job-head"><p class="job-title">QA Officer <span>· PJ Lhuillier, Inc.</span></p><p class="dates">Jun 2026 – Oct 2026</p></div>
+  <ul>
+    <li>Tested an inventory forecasting and ordering system through user acceptance testing (UAT).</li>
+    <li>Wrote and executed test cases traced to requirements, and kept the defect log.</li>
+    <li>Built Playwright end-to-end tests for key user flows.</li>
+    <li>Tested role-based access, so each user role can see and do only what it should.</li>
+    <li>Checked forecast and order data in the database with SQL.</li>
+  </ul>
+  <p class="tools"><b>Tools:</b> Playwright, SQL</p>
+</div>
+
+<div class="job">
+  <div class="job-head"><p class="job-title">Junior User Acceptance Tester <span>· Nityo Infotech (client: BPI-Philam Life), Alabang, Muntinlupa</span></p><p class="dates">Jan 2025 – Feb 2026</p></div>
+  <ul>
+    <li>End-to-end and functional testing.</li>
+    <li>Created and executed test cases.</li>
+    <li>Documented and reported bugs and defects.</li>
+    <li>Coordinated with developers on fixes.</li>
+  </ul>
+  <p class="tools"><b>Tools:</b> CICS (Customer Information Control System), user management system, Microsoft 365</p>
+</div>
+
+<div class="job">
+  <div class="job-head"><p class="job-title">Software Quality Assurance <span>· OptimizeX/Primeview, Alabang, Muntinlupa</span></p><p class="dates">Aug 2023 – Dec 2024</p></div>
+  <ul>
+    <li>End-to-end testing of websites on test and live sites.</li>
+    <li>Functional, compatibility, responsive and cross-browser testing.</li>
+    <li>Daily QA monitoring and reporting.</li>
+    <li>Daily scrum meetings; coordinated with developers.</li>
+  </ul>
+  <p class="tools"><b>Tools:</b> WordPress, Shopify, LambdaTest, Zoho BugTracker</p>
+</div>
+
+<div class="job">
+  <div class="job-head"><p class="job-title">Software QA Analyst, Manual (Level 2) <span>· Seven Seven Global Services Inc., Pasig City</span></p><p class="dates">Apr 2022 – Nov 2022</p></div>
+  <ul>
+    <li>Created test cases based on user stories.</li>
+    <li>Functional and regression testing in UAT and production.</li>
+    <li>Worked in an Agile team: daily stand-up and scrum meetings, coordinating with developers.</li>
+  </ul>
+  <p class="tools"><b>Tools:</b> Jira, Postman, the client's internal tools</p>
+</div>
+
+<div class="job">
+  <div class="job-head"><p class="job-title">Quality Assurance Tester <span>· Q2 HR Solutions, Santa Rosa, Laguna</span></p><p class="dates">Oct 2021 – Dec 2021</p></div>
+  <ul>
+    <li>Documented and executed test cases.</li>
+    <li>Documented bugs and issues; supported tasks on the production line.</li>
+  </ul>
+  <p class="tools"><b>Tools:</b> Linux, spreadsheets</p>
+</div>
+
+<div class="job">
+  <div class="job-head"><p class="job-title">Technical Support <span>· STMicroelectronics, LISP2, Calamba, Laguna</span></p><p class="dates">May 2021 – Aug 2021</p></div>
+  <ul>
+    <li>Desktop and helpdesk support, ticket management and server maintenance.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-head"><p class="job-title">Intern <span>· TESDA Complex, Taguig City</span></p><p class="dates">Apr 2017 – Jun 2017</p></div>
+  <ul>
+    <li>Maintained, troubleshot and configured computer hardware, software, networks and peripherals.</li>
+  </ul>
+</div>
+
+<section>
+<h2>Project</h2>
+<div class="job">
+  <div class="job-head"><p class="job-title">mirou matcha <span>· website and QA case study</span></p><p class="dates">2026</p></div>
+  <ul>
+    <li>Built and published an ordering website for a home-based matcha business:
+      <a href="https://dionanthonyflores-prog.github.io/mirou-matcha/">dionanthonyflores-prog.github.io/mirou-matcha</a></li>
+    <li>Wrote a test plan and 54 automated Playwright test cases (TypeScript) traced to 16 requirements, run on desktop, Android and iPhone.</li>
+    <li>The tests run in GitHub Actions on every update; the site is only published if all of them pass.</li>
+    <li>Found, fixed and documented 5 real bugs with before/after evidence:
+      <a href="https://github.com/dionanthonyflores-prog/mirou-matcha/blob/main/qa/README.md">QA case study</a></li>
+  </ul>
+</div>
+</section>
+
+<h2>Skills</h2>
+<dl class="skills">
+  <dt>Testing</dt><dd>UAT, functional, regression, end-to-end, cross-browser, responsive, compatibility, role-based access</dd>
+  <dt>QA documents</dt><dd>Test plans, test cases, requirements traceability, defect reports with evidence</dd>
+  <dt>Automation</dt><dd>Playwright, TypeScript, GitHub Actions</dd>
+  <dt>Tools</dt><dd>Jira, Postman, Zoho BugTracker, LambdaTest, Git and GitHub, Microsoft 365</dd>
+  <dt>Data</dt><dd>SQL</dd>
+  <dt>Ways of working</dt><dd>Agile / Scrum</dd>
+</dl>
+
+<h2>Education</h2>
+<div class="job">
+  <div class="job-head"><p class="job-title">Bachelor of Science in Computer Science <span>· Colegio de San Juan de Letran Calamba</span></p><p class="dates">2014 – 2018</p></div>
+</div>
+
+<h2>References</h2>
+<p>Available upon request.</p>
+
+</div>
+</body>
+</html>
