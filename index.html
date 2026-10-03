@@ -224,7 +224,7 @@
       <ul class="stats" aria-label="At a glance" style="list-style:none;padding:0;margin:40px auto 0">
         <li class="stat"><b>3.5 yrs</b><span>testing software</span></li>
         <li class="stat"><b>54</b><span>automated test cases, on 3 devices</span></li>
-        <li class="stat"><b>5</b><span>real bugs found, fixed and documented</span></li>
+        <li class="stat"><b>7</b><span>real bugs found, fixed and documented</span></li>
         <li class="stat"><b>16</b><span>requirements traced to their tests</span></li>
       </ul>
     </div>
@@ -260,6 +260,7 @@
             <li>Every test runs on desktop Chrome, an Android phone and an iPhone, including a fake clock for the opening hours.</li>
             <li>A quality gate: tests run on every update, and the site only goes live if all of them pass.</li>
             <li>Regression tests for the bugs were proven to fail on the old, buggy code.</li>
+            <li>A change request handled end to end: I questioned an order limit with the owner, then updated the code, tests and docs.</li>
           </ul>
           <div class="links">
             <a class="btn" href="https://github.com/dionanthonyflores-prog/mirou-matcha/blob/main/qa/README.md">Read the case study</a>
@@ -272,9 +273,9 @@
             <ol>
               <li><span class="bug-id">BUG-002</span><span class="sev major">Major</span><span>The same drink could go past the 20-cup limit, then silently drop after a reload (₱6,400 became ₱3,200).</span></li>
               <li><span class="bug-id">BUG-003</span><span class="sev">Minor</span><span>On phones, the "Reviews" menu link landed 437px short because a photo loaded late.</span></li>
-              <li><span class="bug-id">BUG-004</span><span class="sev">Minor</span><span>A quick second tap on the menu tabs was ignored.</span></li>
+              <li><span class="bug-id">BUG-006</span><span class="sev">Minor</span><span>Found by hand on a Galaxy S24 Ultra: the phone menu couldn't scroll on shorter screens, so the Email contact was cut off.</span></li>
             </ol>
-            <p style="margin:10px 0 0;font-size:.9rem"><a href="https://github.com/dionanthonyflores-prog/mirou-matcha/blob/main/qa/defect-log.md">All 5 bug reports, with before/after screenshots →</a></p>
+            <p style="margin:10px 0 0;font-size:.9rem"><a href="https://github.com/dionanthonyflores-prog/mirou-matcha/blob/main/qa/defect-log.md">All 7 bug reports, with before/after screenshots →</a></p>
           </div>
         </div>
       </article>
