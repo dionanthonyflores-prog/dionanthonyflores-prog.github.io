@@ -81,8 +81,8 @@ test('PF-06 the email button opens an email to me', async ({ page }) => {
 });
 
 test('PF-07 the project links lead to pages that exist', async ({ page }) => {
-  const links = page.locator('#project a[href^="https://"]');
-  expect(await links.count()).toBeGreaterThanOrEqual(5);
+  const links = page.locator('#project a[href^="https://"], #tracker a[href^="https://"]');
+  expect(await links.count()).toBeGreaterThanOrEqual(10);
   for (const link of await links.all()) {
     const url = (await link.getAttribute('href'))!;
     const res = await page.request.get(url);

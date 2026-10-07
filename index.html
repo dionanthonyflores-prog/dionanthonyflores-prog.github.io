@@ -172,7 +172,7 @@
     </a>
     <nav aria-label="Main">
       <ul>
-        <li><a href="#project">Project</a></li>
+        <li><a href="#project">Projects</a></li>
         <li><a href="#how">How I test</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
@@ -276,6 +276,56 @@
               <li><span class="bug-id">BUG-006</span><span class="sev">Minor</span><span>Found by hand on a Galaxy S24 Ultra: the phone menu couldn't scroll on shorter screens, so the Email contact was cut off.</span></li>
             </ol>
             <p style="margin:10px 0 0;font-size:.9rem"><a href="https://github.com/dionanthonyflores-prog/mirou-matcha/blob/main/qa/defect-log.md">All 7 bug reports, with before/after screenshots →</a></p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- SECOND PROJECT -->
+  <section id="tracker" style="padding-top:8px">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Second project</p>
+        <h2>mirou matcha order tracker: a private app with its own database</h2>
+        <p>The shop tracked its orders only in Messenger chats. I asked the owner what she needed and wrote it down as requirements. Then I built a private tracker with a login and a database, and tested the parts where mistakes cost the most: money, dates and who can see the data.</p>
+      </div>
+      <article class="card project">
+        <div class="shots">
+          <figure>
+            <img src="images/tracker-app.jpg" alt="Two phone screens of the order tracker demo: today's orders and sales, and one order with its status, payment and driver message" width="1280" height="800" loading="lazy">
+            <figcaption>The demo, with made-up orders</figcaption>
+          </figure>
+          <figure>
+            <img src="images/tracker-test-report.jpg" alt="Playwright test report for the tracker showing 74 passed, 0 failed, 0 flaky" width="1280" height="800" loading="lazy">
+            <figcaption>Its test report: 74 passed on Android, iPhone and desktop</figcaption>
+          </figure>
+        </div>
+        <div class="body">
+          <h3>Requirements · SQL · security testing · unit and end-to-end tests</h3>
+          <ul class="tags">
+            <li>Requirements</li><li>SQL</li><li>Security testing</li><li>Unit tests</li><li>Playwright</li>
+          </ul>
+          <ul class="checks">
+            <li>12 requirements gathered from the owner before building, each with acceptance criteria and linked to its tests.</li>
+            <li>Security tests against the live database: without logging in, reading, adding, changing or deleting orders is refused, and nobody can sign up.</li>
+            <li>The database itself enforces the rules, with SQL checks and row-level security, so a bug in the app can't break them.</li>
+            <li>13 unit tests for prices, totals and "today" in Manila time, plus 26 end-to-end tests on Android, iPhone and desktop.</li>
+            <li>The tests were tested: 7 deliberate bugs were put into the app, and all 7 were caught.</li>
+            <li>Live since 7 Oct 2026. The owner's trial is on hold while she's busy, so I did a walkthrough on a real phone (6 of 6 passed).</li>
+          </ul>
+          <div class="links">
+            <a class="btn" href="https://dionanthonyflores-prog.github.io/mirou-order-tracker/?demo">Try the demo</a>
+            <a class="btn ghost" href="https://github.com/dionanthonyflores-prog/mirou-order-tracker/blob/main/docs/requirements.md">Requirements</a>
+            <a class="btn ghost" href="https://dionanthonyflores-prog.github.io/mirou-order-tracker/report/">Test report</a>
+            <a class="btn ghost" href="https://github.com/dionanthonyflores-prog/mirou-order-tracker">Code</a>
+          </div>
+          <div class="bugs">
+            <h4>A bug my own test caught before release</h4>
+            <ol>
+              <li><span class="bug-id">T-BUG-001</span><span class="sev">Minor</span><span>A status tap jumped the page to the top, so a quick double tap could open a different order.</span></li>
+            </ol>
+            <p style="margin:10px 0 0;font-size:.9rem"><a href="https://github.com/dionanthonyflores-prog/mirou-order-tracker/blob/main/docs/defect-log.md">Read the bug report →</a></p>
           </div>
         </div>
       </article>
